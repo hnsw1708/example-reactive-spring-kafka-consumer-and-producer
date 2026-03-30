@@ -14,7 +14,7 @@ public class ReactiveKafkaProducerConfig {
     @Bean
     public ReactiveKafkaProducerTemplate<String, FakeProducerDTO> reactiveKafkaProducerTemplate(
             KafkaProperties properties) {
-        Map<String, Object> props = properties.buildProducerProperties();
+        Map<String, Object> props = properties.buildProducerProperties(null);
         return new ReactiveKafkaProducerTemplate<String, FakeProducerDTO>(SenderOptions.create(props));
     }
 }
